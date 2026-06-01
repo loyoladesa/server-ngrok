@@ -30,20 +30,20 @@ RUN sudo service nginx start
 
 COPY dash /var/www/html/dash
 
-#RUN apt-get -y install curl
+RUN apt-get -y install curl
 
-#RUN curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list && sudo apt-get -y update && sudo apt-get -y install ngrok
+RUN curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list && sudo apt-get -y update && sudo apt-get -y install ngrok
 
-#RUN ngrok config add-authtoken 2fcZ1KzNGtWXIfMPdcPIqsw6irN_61L8B67QBYThwTYWzFJ5n
+RUN ngrok config add-authtoken 2fcZ1KzNGtWXIfMPdcPIqsw6irN_61L8B67QBYThwTYWzFJ5n
 
-#RUN ngrok http --domain=qoernp.ngrok.app 80
+RUN ngrok http --domain=qoernp.ngrok.app 80
 
 EXPOSE 5215
 
 
-#CMD ["ngrok","http --domain=qoernp.ngrok.app 80"]
+CMD ["ngrok","http --domain=qoernp.ngrok.app 80"]
 
-CMD ["nginx", "-g", "daemon off;"]
+#CMD ["nginx", "-g", "daemon off;"]
 
 
 
