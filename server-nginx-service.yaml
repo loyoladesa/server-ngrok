@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ngrok-service
+spec:
+  type: NodePort
+  ports:
+  - port: 5215
+    targetPort: 5215
+    protocol: TCP
+  selector:
+    app: nginx-server-pod
