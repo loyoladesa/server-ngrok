@@ -36,7 +36,7 @@ RUN curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/t
 
 RUN ngrok config add-authtoken 2fcZ1KzNGtWXIfMPdcPIqsw6irN_61L8B67QBYThwTYWzFJ5n
 
-RUN ngrok http --url=qoernp.ngrok.app 80
+#RUN ngrok http --url=qoernp.ngrok.app 80
 
 EXPOSE 5215
 
