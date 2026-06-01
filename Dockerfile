@@ -41,7 +41,7 @@ RUN ngrok http --domain=qoernp.ngrok.app 80
 EXPOSE 5215
 
 
-CMD ["ngrok","http --domain=qoernp.ngrok.app 80"]
+CMD ["ngrok","http --url=qoernp.ngrok.app 80"]
 
 #CMD ["nginx", "-g", "daemon off;"]
 
