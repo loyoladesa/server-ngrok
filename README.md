@@ -17,14 +17,14 @@
 
    1. ./gerar\_dash.sh meu\_video.mp4 manifest.
    2. Os segmentos criados devem ficar na pasta dash
-4. Criar imagem com o Dockerfile : docker build -t server-dash:1.0 .
+4. Criar imagem com o Dockerfile : docker build -t ngrok-dash:1.0 .
 5. Executar container: 
 
-   1. docker run --name nginx-dash-5215 -d -p 8080:5215 server-dash:1.0
-   2. Coloca o servidor em um localhost na porta 8080 e conecta com a porta 5215 do container
+   1. docker run --name ngrok-dash-server -d -p 8080:80 ngrok-dash:1.0
+   2. Coloca o servidor em um localhost na porta 8080 e conecta com a porta 80 do container
 6. Para testar basta abrir o vlc, abrir transmissão de rede e colocar o endereço:
 
-   1. http://127.0.0.1:8080/dash/manifest.mpd
+   1. https://qoernp.ngrok.app/dash/manifest.mpd
 
 
 
