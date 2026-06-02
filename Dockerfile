@@ -40,7 +40,13 @@ RUN ngrok config add-authtoken 2fcZ1KzNGtWXIfMPdcPIqsw6irN_61L8B67QBYThwTYWzFJ5n
 
 EXPOSE 80
 
-# Use entrypoint for runtime configuration
+# 1. Copia o arquivo da sua máquina para a raiz do container
+COPY entrypoint.sh /entrypoint.sh
+
+# 2. Garante que o arquivo tenha permissão de execução
+RUN chmod +x /entrypoint.sh
+
+# 3. Define como o container deve iniciar
 ENTRYPOINT ["/entrypoint.sh"]
 
 #CMD ["ngrok","http --url=qoernp.ngrok.app 80"]
