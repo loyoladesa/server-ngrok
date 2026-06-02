@@ -38,10 +38,12 @@ RUN ngrok config add-authtoken 2fcZ1KzNGtWXIfMPdcPIqsw6irN_61L8B67QBYThwTYWzFJ5n
 
 #RUN ngrok http --url=qoernp.ngrok.app 80
 
-EXPOSE 5215
+EXPOSE 80
 
+# Use entrypoint for runtime configuration
+ENTRYPOINT ["/entrypoint.sh"]
 
-CMD ["ngrok","http --url=qoernp.ngrok.app 80"]
+#CMD ["ngrok","http --url=qoernp.ngrok.app 80"]
 
 #CMD ["nginx", "-g", "daemon off;"]
 
